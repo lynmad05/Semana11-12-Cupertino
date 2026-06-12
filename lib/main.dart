@@ -1,22 +1,26 @@
-import 'package:flutter/material.dart';
-import 'package:semana8/screens/login_screen.dart';
+import 'package:flutter/cupertino.dart';
+import 'screens/login_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xFF577FCD),
-        scaffoldBackgroundColor: Color(0xFF9EC9E2),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Color(0xFF253F7C),
+    return CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      theme: const CupertinoThemeData(
+        primaryColor: Color(0xFF3A6BC9),
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Color(0xFFF2F6FC),
+        textTheme: CupertinoTextThemeData(
+          primaryColor: Color(0xFF1C3A7A),
         ),
       ),
-      home: LoginScreen()
+      home: const LoginScreen(),
     );
   }
 }
